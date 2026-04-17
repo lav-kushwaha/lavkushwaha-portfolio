@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { GitHubCalendar } from "react-github-calendar";
+import dynamic from "next/dynamic";
+
+const GitHubCalendar = dynamic(
+  () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
+  { ssr: false }
+);
 
 function YearButton({ year, currentYear, onClick }: any) {
   return (
@@ -29,16 +34,23 @@ function getGitHubYears(joinYear: number) {
 export default function GithubGraph() {
   const [calendarYear, setCalendarYear] = useState<number | undefined>();
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [today, setToday] = useState<number>();
 
   useEffect(() => {
+    setMounted(true);
+    setToday(new Date().getFullYear());
+
     const handleResize = () => setIsMobile(window.innerWidth < 640);
     handleResize();
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  if (!mounted) return null;
+
   const username = "lav-kushwaha";
-  const today = new Date().getFullYear();
   const years = getGitHubYears(2022);
 
   return (

@@ -67,7 +67,7 @@ export const projects = [
     techStack: ["React", "Tailwind", "Node", "Express", "MongoDB"],
     thumbnail: "/projects/youtube.png",
     links: {
-      live: "",
+      live: "", 
       github: "https://github.com/lav-kushwaha/YouTube-Clone-Using-MERN-STACK",
     },
   },
