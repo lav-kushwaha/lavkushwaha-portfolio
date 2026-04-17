@@ -7,5 +7,5 @@ export const aboutData = {
     github: "https://github.com/lav-kushwaha",
     twitter: "https://twitter.com/lavkushwaha_",
   },
-  images: ["/Profile/profile.jpg",],
+  images: ["/profile/profile.jpg",],
 };
