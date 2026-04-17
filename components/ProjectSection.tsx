@@ -15,11 +15,11 @@ export default function ProjectSection({ title, show = false, limit }: Props) {
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section className="w-full bg-[#080b10] text-white py-24 lg:py-32">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="w-full  text-white py-24 lg:py-32">
+      <div className="max-w-6xl mx-auto sm:px-8 lg:px-5">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 lg:mb-28 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 lg:mb-10 gap-6">
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="h-px w-7 bg-amber-400/40" />
@@ -98,7 +98,7 @@ export default function ProjectSection({ title, show = false, limit }: Props) {
                     </div>
                   )}
 
-                  {/* Links (FIXED HERE) */}
+                  {/* Links */}
                   <div className="flex gap-3 flex-wrap pt-1">
 
                     {project.links?.live && (
@@ -132,11 +132,8 @@ export default function ProjectSection({ title, show = false, limit }: Props) {
                   <div className="md:w-1/2 w-full">
                     <div className="relative overflow-hidden rounded-2xl border border-white/[0.06]">
 
-                      <div className="absolute top-0 left-0 w-16 h-16 border-t border-l border-amber-400/20 rounded-tl-2xl z-10 group-hover:border-amber-400/50 transition-colors duration-500" />
-                      <div className="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-amber-400/20 rounded-br-2xl z-10 group-hover:border-amber-400/50 transition-colors duration-500" />
-
-                      <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-
+                      <div className="absolute top-0 left-0 w-16 h-16 border-t border-l border-amber-400/20 rounded-tl-2xl z-10  transition-colors duration-500" />
+                      <div className="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-amber-400/20 rounded-br-2xl z-10 transition-colors duration-500" />
                       <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] z-10" />
 
                       <Image
