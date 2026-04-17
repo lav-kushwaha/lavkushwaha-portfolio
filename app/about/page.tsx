@@ -11,45 +11,78 @@ import {
   FaPenNib,
 } from "react-icons/fa";
 
-import Skills from "@/components/Skills"
-import {aboutData} from "@/constants/about"
+import Skills from "@/components/Skills";
+import { aboutData } from "@/constants/about";
 
 export default function About() {
   const { bio, interests, contact, images } = aboutData;
 
- const interestIcons: Record<string, React.ReactNode> = {
-  Coding: <FaCode />,
-  reading: <FaBook className="text-green-500" />,
-  "content creation": <FaPenNib className="text-purple-500" />,
-};
+  const interestIcons: Record<string, React.ReactNode> = {
+    Coding: <FaCode />,
+    reading: <FaBook className="text-green-500" />,
+    "content creation": <FaPenNib className="text-purple-500" />,
+  };
 
   return (
-    <div className="bg-black text-white px-4">
-      
+    <section className="w-full bg-black text-white px-5 md:px-10 py-16 mt-10">
+
       {/* Heading */}
-      <h2 className="text-7xl md:text-8xl font-bold text-center mb-20 mt-28">
+      <h2 className="text-4xl md:text-8xl font-bold text-center mb-16">
         About Me
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-25 max-w-6xl mx-auto ">
+      {/* Layout */}
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
 
-        {/* LEFT */}
-        <div className="space-y-7">
+        {/* IMAGE */}
+        <div className="flex justify-center items-start order-1 md:order-2 mb-10 md:mb-0">
+          {images?.[0] && (
+            <div className="relative w-full max-w-md aspect-square group">
+
+              {/* Glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-700 to-yellow-500 rounded-2xl blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+
+              {/* Image */}
+              <Image
+                src={images[0]}
+                alt="profile"
+                fill
+                className="
+                  rounded-2xl object-cover relative z-10 shadow-xl
+                  transition duration-500
+                  group-hover:scale-105
+                "
+              />
+            </div>
+          )}
+        </div>
+
+        {/* CONTENT */}
+        <div className="space-y-8 ml-6 order-2 md:order-1">
 
           {/* Bio */}
-          <p className="text-lg text-gray-300 leading-relaxed">{bio}</p>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            {bio}
+          </p>
 
           {/* Interests */}
           <div>
-            <h3 className="text-2xl font-bold mb-3">My Interests</h3>
-            <div className="space-y-2">
+            <h3 className="text-2xl font-semibold mb-4">
+              My Interests
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {interests.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 text-gray-300 hover:text-white transition"
+                  className="flex items-center gap-3 px-4 py-2 bg-gray-900 rounded-lg hover:bg-gray-800 transition"
                 >
-                  {interestIcons[item] || <FaCode />}
-                  <span className="capitalize">{item}</span>
+                  <span className="text-lg">
+                    {interestIcons[item] || <FaCode />}
+                  </span>
+                  <span className="capitalize text-gray-300">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -57,22 +90,25 @@ export default function About() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-2xl font-bold mb-3">Get In Touch</h3>
+            <h3 className="text-2xl font-semibold mb-4">
+              Get In Touch
+            </h3>
 
-            <div className="space-y-2">
+            <div className="flex flex-wrap gap-4">
 
               <a
                 href={`mailto:${contact.email}`}
-                className="flex items-center gap-2 text-gray-300 hover:text-white"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg hover:bg-gray-800 transition"
               >
                 <MdEmail className="text-red-400" />
-                <span>{contact.email}</span>
+                <span>Email</span>
               </a>
 
               <a
                 href={contact.linkedin}
                 target="_blank"
-                className="flex items-center gap-2 text-gray-300 hover:text-white"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg hover:bg-gray-800 transition"
               >
                 <FaLinkedin className="text-blue-500" />
                 <span>LinkedIn</span>
@@ -81,7 +117,8 @@ export default function About() {
               <a
                 href={contact.github}
                 target="_blank"
-                className="flex items-center gap-2 text-gray-300 hover:text-white"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg hover:bg-gray-800 transition"
               >
                 <FaGithub />
                 <span>GitHub</span>
@@ -90,7 +127,8 @@ export default function About() {
               <a
                 href={contact.twitter}
                 target="_blank"
-                className="flex items-center gap-2 text-gray-300 hover:text-white"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg hover:bg-gray-800 transition"
               >
                 <FaTwitter className="text-sky-400" />
                 <span>Twitter</span>
@@ -98,29 +136,16 @@ export default function About() {
 
             </div>
           </div>
-        </div>
 
-        {/* RIGHT (Images) */}
-        <div className="grid grid-cols-2 gap-3">
-          {images.map((img, index) => (
-            <div key={index} className="overflow-hidden rounded-2xl">
-              <Image
-                src={img}
-                alt={`about-${index}`}
-                width={400}
-                height={400}
-                className="w-full h-[250px] md:h-[300px] object-cover hover:scale-105 transition"
-              />
-            </div>
-          ))}
         </div>
 
       </div>
 
       {/* Skills */}
-      <div className="mt-16">
-        <Skills/>
+      <div className="mt-20">
+        <Skills />
       </div>
-    </div>
+
+    </section>
   );
 }
