@@ -54,7 +54,7 @@ export default function GithubGraph() {
   const years = getGitHubYears(2022);
 
   return (
-    <section className="w-full text-white md:mb-20 md:mt-20">
+    <section className="w-full text-white md:mb-20 ">
       <div className="max-w-6xl mx-auto px-7">
 
         <h1 className="text-2xl md:text-5xl font-bold mb-8 md:mb-10">
