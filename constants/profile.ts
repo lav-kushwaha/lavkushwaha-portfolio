@@ -3,7 +3,7 @@
     role: "Full Stack Developer",
     intro:
       "I enjoy building intelligent solutions and exploring the possibilities of AI.",
-    images: ["/Profile/profile.jpg"],
+    images: ["/profile/profile.jpg"],
     contact: {
       github: "https://github.com/lav-kushwaha",
       linkedin: "https://www.linkedin.com/in/lavkushwaha",
