@@ -15,7 +15,7 @@ export default function ProjectSection({ title, show = false, limit }: Props) {
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section className="w-full  text-white py-24 lg:py-10">
+    <section className="w-full px-8  text-white py-20 lg:py-10">
       <div className="max-w-6xl mx-auto sm:px-8 lg:px-5">
 
         {/* Header */}
