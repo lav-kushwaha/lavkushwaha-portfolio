@@ -68,12 +68,12 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
 
-              <Link
+              {/* <Link
                 href="/contact"
                 className="px-8 py-3.5 border border-slate-700 rounded-lg text-slate-300 font-semibold text-sm tracking-wide hover:border-amber-400/60 hover:text-amber-400 hover:bg-amber-400/[0.04] transition-all duration-300"
               >
                 Get In Touch
-              </Link>
+              </Link> */}
             </div>
 
             {/* Socials */}
