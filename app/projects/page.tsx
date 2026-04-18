@@ -5,7 +5,7 @@ export default function ProjectsPage() {
     <div className="bg-black text-white">
 
       {/* Header */}
-      <div className="max-w-6xl mt-15 mx-auto px-6 text-center py-16">
+      <div className="max-w-6xl md:mt-12 mt-28 mx-auto px-6 text-center md:py-16">
         
         <h1 className="text-5xl sm:text-5xl md:text-8xl lg:text-8xl font-playfair font-bold mb-6">
           Projects

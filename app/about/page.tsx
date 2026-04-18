@@ -27,7 +27,7 @@ export default function About() {
     <section className="w-full bg-black text-white px-5 md:px-10 py-16 mt-10">
 
       {/* Heading */}
-      <h2 className="text-4xl md:text-8xl font-bold text-center mb-16">
+      <h2 className="text-5xl md:text-8xl font-bold text-center mb-16">
         About Me
       </h2>
 
@@ -35,7 +35,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
 
         {/* IMAGE */}
-        <div className="flex justify-center items-start order-1 md:order-2 mb-10 md:mb-0">
+        <div className="flex justify-center items-start order-1 md:order-2  md:mb-0">
           {images?.[0] && (
             <div className="relative w-full max-w-md aspect-square group">
 
