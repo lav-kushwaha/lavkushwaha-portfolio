@@ -16,7 +16,7 @@ export default function Skills() {
   const currentCategory = skillsData.find((cat) => cat._id === activeCategory);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-24 text-white">
+    <section className="max-w-6xl mx-auto px-6 mb-10 md:py-24 text-white">
 
       {/* EYEBROW */}
       <p className="text-xs font-medium tracking-[0.15em] uppercase text-amber-400 mb-3">
