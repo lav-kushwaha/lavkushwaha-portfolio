@@ -44,12 +44,12 @@ export default function Header() {
               );
             })}
 
-            <FiSun className="text-xl cursor-pointer" />
+            {/* <FiSun className="text-xl cursor-pointer" /> */}
           </div>
 
           {/* Mobile Icons */}
           <div className="md:hidden flex items-center gap-4 z-50">
-            <FiSun className="text-xl cursor-pointer" />
+            {/* <FiSun className="text-xl cursor-pointer" /> */}
 
             {isOpen ? (
               <FiX
